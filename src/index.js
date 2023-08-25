@@ -8,7 +8,7 @@ import bodyParser from 'body-parser'
 const app = express()
 
 app.use(cors())
-app.use(bodyParser.json())
+app.use(bodyParser.json({limit: '50mb'}))
 
 app.post('/render', async (req, res) => {
   res.setHeader('Content-type', 'application/pdf')
